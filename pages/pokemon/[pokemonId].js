@@ -34,7 +34,6 @@ export const getStaticProps = async context => {
 }
 
 export const Pokemon = ({ pokemon }) => {
-	console.log(pokemon)
 	return (
 		<div className={styles.pokemon_container}>
 			<h1 className={styles.title}>{pokemon.name}</h1>
