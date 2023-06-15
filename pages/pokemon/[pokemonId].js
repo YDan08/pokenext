@@ -1,3 +1,4 @@
+import Image from "next/image"
 import styles from "../../styles/Pokemon.module.css"
 
 export const getStaticPaths = async () => {
@@ -33,9 +34,16 @@ export const getStaticProps = async context => {
 }
 
 export const Pokemon = ({ pokemon }) => {
+	console.log(pokemon)
 	return (
 		<div className={styles.pokemon_container}>
 			<h1 className={styles.title}>{pokemon.name}</h1>
+			<Image
+				src={pokemon.sprites.other["dream_world"].front_default}
+				alt={pokemon.name}
+				width={200}
+				height={200}
+			/>
 			<div>
 				<h3>Número:</h3>
 				<p>#{pokemon.id}</p>
